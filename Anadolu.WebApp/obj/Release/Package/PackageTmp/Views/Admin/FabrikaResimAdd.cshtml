@@ -1,0 +1,49 @@
+﻿@model Anadolu.Entitiess.AnaFabrikaResim
+
+@{
+    ViewBag.Title = "FabrikaResimAdd";
+    Layout = "~/Views/Shared/_LayoutPageGallery.cshtml";
+}
+
+
+<form action="/Admin/FabrikaResimAdd" method="post" enctype="multipart/form-data">
+
+    <section class="features-section spad set-bg" >
+        <div class="container">
+
+            <div class="row">
+               
+                <div class="col-lg-6">
+
+
+                    <h2 >Fabrika Resmi</h2>
+
+                    <div enctype="multipart/form-data">
+                        <input type="file" name="uploadfile" id="uploadfile" />
+                        <br />
+
+                        <span class="glyphicon glyphicon-info-sign">&nbsp;</span>
+                        <span><i >Lütfen jpg, jpeg ya da png formatı kullanın.</i></span>
+                        <br />
+
+                        <span class="glyphicon glyphicon-info-sign">&nbsp;</span>
+                        <span><i >Ürün resmi olmadan kayıt yapılmaz.</i></span>
+
+                    </div>
+                    <button class="btn btn-success my-1" type="submit">Ekle</button>
+
+                </div>
+
+
+               
+            </div>
+
+
+
+        </div>
+
+
+    </section>
+
+ </form>
+    <br />

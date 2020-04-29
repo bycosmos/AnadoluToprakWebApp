@@ -1,0 +1,53 @@
+﻿@model Anadolu.Entitiess.AnaFabrikaResim
+
+@{
+    ViewBag.Title = "FabrikaResimEdit";
+    Layout = "~/Views/Shared/_LayoutAdminPage.cshtml";
+}
+
+<h2>FabrikaResimEdit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>AnaFabrikaResim</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ResimAdres, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ResimAdres, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ResimAdres, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="col-md-3">
+        <img src="@Model.ResimAdres" />
+        @Html.HiddenFor(model => model.ResimAdres)
+        <br /><br />
+        <input type="file" name="uploadfile" id="uploadfile" class="form-control" /><br />
+        <span class="glyphicon glyphicon-info-sign">&nbsp;</span>
+        <span><i>Lütfen jpg, jpeg ya da png formatı kullanın.</i></span>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

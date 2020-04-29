@@ -1,0 +1,99 @@
+﻿@model IEnumerable<Anadolu.Entitiess.AnaSliderResim>
+@{
+    /**/
+
+    /**/
+
+    ViewBag.Title = "Slider";
+    Layout = "~/Views/Shared/_LayoutAdminPage.cshtml";
+}
+
+<!-- Hero section  -->
+<section class="hero-section">
+    <div class="hero-slider owl-carousel">
+        @foreach (var lst in Model)
+        {
+
+
+            <form action="/Admin/SliderSil" method="post" enctype="multipart/form-data">
+
+                <div class="hero-item set-bg" data-setbg="@lst.SliderResimAdres">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-8">
+                                <h2><span>Tuğla</span><span>& Kremit</span><span>ve Daha Fazlası</span></h2>
+                                <a href="http://www.onka.com.tr/pdf/onka-katalog-2018.pdf" class="site-btn sb-white mr-4 mb-3" target="_blanck"> <i class="fa fa-file-pdf-o"></i>E-Katalog</a>
+                                <a href="#" class="site-btn sb-dark mr-4 mb-3" data-toggle="modal" data-target="#exampleModalCenter"> <i class="fa fa-play-circle mx-2"></i>Tanıtım Videosu</a>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </form>
+
+
+        }
+    </div>
+
+
+</section>
+
+
+
+<section class="col-md-12 col-sm-4" style="border:inset">
+
+
+    <form id="SliderRes" action="/Admin/Slider" method="post" enctype="multipart/form-data">
+
+
+
+
+
+        <h2 class="text-center">Resmi Ekle</h2>
+
+        <div class="form-control" enctype="multipart/form-data">
+            <input type="file" name="uploadfile" id="uploadfile" />
+            <br />
+
+        </div>
+        <br />
+
+        <button type="submit" class="btn btn-success btn-block" name="kaydet" id="kaydet"> Ekle</button>
+    </form>
+
+</section>
+
+
+
+
+
+<section class="features-section spad set-bg" data-setbg="img/features-bg.jpg" style="background-image: url(&quot;img/features-bg.jpg&quot;);">
+    <div class="container">
+        <div class="row">
+            @foreach (var Res in Model)
+            {
+
+                <div class="col-lg-4 col-md-12">
+                    <div class="feature-box">
+                        <img src="@Res.SliderResimAdres" alt="" style="border:inset">
+
+
+                        <a href="/Admin/SliderDelete/@Res.Id" class="btn btn-custon-four btn-danger">Sil</a>
+
+
+
+
+                    </div>
+                </div>
+
+            }
+        </div>
+    </div>
+</section>

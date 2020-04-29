@@ -1,0 +1,104 @@
+﻿
+
+@{
+    ViewBag.Title = "İletişim";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section class="contact-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="contact-text">
+                    <h2>İletişim</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque orci purus, sodales in est quis, blandit sollicitudin estst quis, blandit sollicitudi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque orci purus, sodales in est quis, blandit sollicitudin estst quis, blandit sollicitudi</p>
+                    <div class="header-info-box">
+                        <div class="hib-icon">
+                            <img src="img/icons/phone.png" alt="" class="">
+                        </div>
+                        <div class="hib-text">
+                            <h6>+90546 212 32 60</h6>
+                            <p>iletisim@anadolutoprak.com</p>
+                        </div>
+                    </div>
+                    <div class="header-info-box">
+                        <div class="hib-icon">
+                            <img src="img/icons/map-marker.png" alt="" class="">
+                        </div>
+                        <div class="hib-text">
+                            <h6>Y.Beyazıt Mah.R.T Erdoğan Blv. 78</h6>
+                            <p>Erbaa, Tokat</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+
+                @using (Html.BeginForm("Index", "Contact", FormMethod.Post, new { @class = "contact-form" }))
+                {
+
+                    if (ViewBag.Success != null && ViewBag.Success)
+                    {
+                        <div id="wrapper">
+                            <div id="message-sent">
+                                <div id="close-button">
+                                    <span>X</span>
+                                </div>
+                                <span>Mesajınız başarıyla gönderilmiştir.</span>
+                            </div>
+                        </div>
+                    }
+
+                    @*<form class="contact-form">*@
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <input type="text" placeholder="Ad Soyad" name="name" required>
+                        </div>
+                        <div class="col-lg-6">
+                            <input type="email" placeholder="Email" name="Email" required>
+                        </div>
+
+                        <div class="col-lg-4">
+                        </div>
+                        <div class="col-lg-12">
+                            <input type="text" placeholder="Konu" name="Subject">
+
+                            <input type="tel" placeholder="Telefon" name="Phone" required>
+                            <textarea class="text-msg" placeholder="Mesaj" name="Message" required></textarea>
+                            <button class="site-btn" type="submit">Mesajı Gönder</button>
+                        </div>
+                    </div>
+                    @*</form>*@
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to action section  -->
+
+<section class="cta-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 d-flex align-items-center">
+                <h2>İş Birliği, Güç Birliği</h2>
+            </div>
+            <a href="/Home/Contact" class="site-btn sb-dark">Bize Ulaşın</a>
+
+        </div>
+    </div>
+</section>
+<!-- Call to action section end  -->
+<!-- Map section  -->
+<div class="map-section">
+    <div class="row">
+
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1424.4773022851818!2d36.60444605743917!3d40.67139774734887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x407d719bea643ee5%3A0x339b900b0e4ac6c6!2sAnadolu%20Toprak%20Sanayi!5e1!3m2!1str!2str!4v1577013625898!5m2!1str!2str" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+        </div>
+    </div>
+</div>
+<!-- Map section end  -->
+<!-- Contact section end  -->

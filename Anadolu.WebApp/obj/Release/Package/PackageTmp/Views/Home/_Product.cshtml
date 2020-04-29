@@ -1,0 +1,190 @@
+﻿@model Anadolu.Entitiess.Product
+
+<div class="row">
+
+    <div class="col-md-4 col-sm-4">
+        <div class="feature-box">
+            <div style="height:700px">
+
+
+                <div class="text-center"> <h3>Ürün Bilgileri</h3></div>
+
+
+                <div style="display:none">
+
+                    <input name="name" value="@Model.Fiyat" disabled id="Fiyat1" />
+
+                </div>
+
+
+
+                <div class="row">
+
+                    <div class=" col-md-4 offset-4">
+                        <img src="@Model.UrunResimAdres" alt="">
+
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <small>
+                            <h4 class="mt-2 mb-2"> @Model.Name </h4>
+
+                        </small>
+                        <table class="table table-striped">
+
+                            <tbody>
+                                <tr>
+                                    <th><small>Ağırlık(kg)</small> </th>
+                                    <td><small>@Model.Agirlik</small></td>
+
+                                </tr>
+                                <tr>
+                                    <th scope="row"><small>Boyut(cm)</small> </th>
+                                    <td><small>@Model.Boyut</small> </td>
+
+                                </tr>
+                                <tr>
+                                    <th scope="row"><small>Basınç Dayanımı(N/mm)</small> </th>
+                                    <td><small>@Model.BasincDayanimi</small> </td>
+
+                                </tr>
+                                <tr>
+                                    <th scope="row"><small>Isı iletkenliği()</small> </th>
+                                    <td><small>@Model.IsiIletkenligi</small> </td>
+
+                                </tr>
+
+                                <tr>
+                                    <th scope="row"><small>M² İçin Gereken Tuğla Sayısı (Adet)	</small> </th>
+                                    <td><small>@Model.MetrekareTuglaSayisi</small> </td>
+
+                                </tr>
+
+
+                                <tr>
+                                    <th scope="row"><small>Fiyat	</small> </th>
+                                    <td><small>@Model.Fiyat</small> </td>
+
+
+                                </tr>
+
+                                <tr>
+                                    <th scope="row"><small>dfghgfds	</small> </th>
+                                    <td><small>1</small> </td>
+
+                                </tr>
+
+
+
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-md-8 col-sm-4" style="height:700px">
+
+        <div class="text-center"> <h3>Siparis Bilgileri</h3></div>
+
+        @using (Html.BeginForm("Index", "Contact", FormMethod.Post, new { @class = "contact-form" }))
+        {
+
+            if (ViewBag.Success != null && ViewBag.Success)
+            {
+                <div id="wrapper">
+                    <div id="message-sent">
+                        <div id="close-button">
+                            <span>X</span>
+                        </div>
+                        <span>Mesajınız başarıyla gönderilmiştir.</span>
+                    </div>
+                </div>
+            }
+
+            @*<form class="contact-form">*@
+            <div class="row">
+
+                <div class="col-lg-6">
+                    <input type="text" placeholder="Ad Soyad" name="name">
+                </div>
+
+                <div class="col-lg-6">
+                    <input type="text" placeholder="Email" name="Email">
+                </div>
+                <div class="col-lg-2">
+
+                    <h6 class="mt-3 mx-4">Adet :</h6>
+                </div>
+                <div class="col-lg-3">
+                    <input type="number" value="500" min="0" max="100000" step="10" id="Adet" />
+                </div>
+
+                <div class="col-lg-3 ">
+
+                    <h6 class="mt-3 mx-4">Ortalama Tutar :</h6>
+                </div>
+                <div class="col-lg-3">
+                    <input type="text" min="0" max="100000" step="10" id="Fiyat" />
+                </div>
+
+
+
+
+                <div class="col-lg-12">
+                    <input type="text" placeholder="Konu" name="Subject">
+
+                    <input type="tel" placeholder="Telefon" name="Phone">
+
+                    <textarea class="text-msg" placeholder="Mesaj" name="Message"></textarea>
+                    <button class="site-btn" type="submit">Mesajı Gönder</button>
+                </div>
+            </div>
+            @*</form>*@
+        }
+    </div>
+</div>
+
+
+
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+
+
+    $("#Adet").change(function () {
+
+        var sayi1 = Number($("#Adet").val());
+        var sayi2 = parseFloat(@Model.Fiyat);
+        $("#Fiyat").val(sayi1 * sayi2 + " TL");
+
+
+
+    });
+
+
+
+
+    $('#sel1').change(function () {
+        $("#p").show(1000);
+
+
+        var id = $('#sel1 option:selected').val();
+        $.get("/Home/_Product/", { id: id }, function (d) {
+
+            $("#list").html(d);
+        });
+    });
+
+</script>
+
+
+
+

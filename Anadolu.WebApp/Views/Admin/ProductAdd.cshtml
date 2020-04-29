@@ -1,0 +1,275 @@
+﻿@model Anadolu.Entitiess.Product
+
+@{
+    ViewBag.Title = "ProductAdd";
+    Layout = "~/Views/Shared/_LayoutAdminPage.cshtml";
+}
+
+
+
+@using Anadolu.BusinessLayer
+@using Anadolu.Entitiess
+@{
+
+    KategoriManager km = new KategoriManager();
+
+    List<Category> produc = km.List();
+
+}
+
+
+<h2 class="text-center">Ürün Kartı Oluşturma</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal d-block d-sm-none">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Agirlik, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Agirlik, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Agirlik, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BasincDayanimi, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.BasincDayanimi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.BasincDayanimi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IsiIletkenligi, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.IsiIletkenligi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.IsiIletkenligi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MetrekareTuglaSayisi, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MetrekareTuglaSayisi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MetrekareTuglaSayisi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Boyut, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Boyut, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Boyut, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Fiyat, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Fiyat, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Fiyat, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PaletSayisi, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PaletSayisi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PaletSayisi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Category, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+
+                <select class="form-control" id="CategoryId" name="CategoryId">
+
+
+                    @foreach (Category cat in produc)
+                    {
+
+
+                        <option value="@cat.Id">@cat.Name</option>
+
+                    }
+                </select>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.UrunResimAdres, htmlAttributes: new { @class = "control-label col-md-2" })
+ 
+
+                <div class="form-control" enctype="multipart/form-data">
+                    <input type="file" name="uploadfile" id="uploadfile" />
+                    <br />
+
+                    <span class="glyphicon glyphicon-info-sign">&nbsp;</span>
+                    <span><i>Lütfen jpg, jpeg ya da png formatı kullanın.</i></span>
+                    <br />
+
+                    <span class="glyphicon glyphicon-info-sign">&nbsp;</span>
+                    <span><i>Ürün resmi olmadan kayıt yapılmaz.</i></span>
+
+               
+
+
+            </div>
+        </div>
+        <div class="form-group mb-5 mt-5">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+
+
+<br />
+
+<form action="/Admin/ProductAdd" method="post" enctype="multipart/form-data">
+
+
+
+
+    <div class="container col-my-2 d-sm-block d-none">
+
+        <div class="row">
+            <div class="col-md-12" data-tag="tugla">
+                <div class="card" id="card">
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <div class="mt-1 ml-1">
+
+                                <select class="custom-select custom-select-sm form-group col-my-2" id="CategoryId" name="CategoryId">
+
+
+                                    @foreach (Category cat in produc)
+                                    {
+
+
+                                        <option value="@cat.Id">@cat.Name</option>
+
+                                    }
+                                </select>
+
+
+                            </div>
+
+                            <h2>Ürün Resmi</h2>
+
+                            <div enctype="multipart/form-data">
+                                <input type="file" name="uploadfile" id="uploadfile" />
+                                <br />
+
+                                <span class="glyphicon glyphicon-info-sign">&nbsp;</span>
+                                <span><i>Lütfen jpg, jpeg ya da png formatı kullanın.</i></span>
+                                <br />
+
+                                <span class="glyphicon glyphicon-info-sign">&nbsp;</span>
+                                <span><i>Ürün resmi olmadan kayıt yapılmaz.</i></span>
+
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-8">
+                            <h5 class="card-title mt-1 mb-1">
+                                <input class="form-control" type="text" placeholder="Ürün Adı" name="Name">
+                            </h5>
+
+
+                            <table class="table table-striped">
+
+                                <tbody>
+                                    <tr>
+                                        <th><h6>Ağırlık (kg)</h6> </th>
+                                        <td>
+                                            <h6>
+                                                <input class="form-control" type="text" placeholder="kg" name="Agirlik">
+                                            </h6>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><h6>Boyut (cm)</h6> </th>
+                                        <td>
+                                            <h6>
+                                                <input class="form-control" type="text" placeholder="aaxbbxcc" name="Boyut">
+                                            </h6>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><h6>Basınç Dayanımı (N/mm)</h6> </th>
+                                        <td>
+                                            <h6>
+                                                <input class="form-control" type="text" placeholder="N/mm" name="BasincDayanimi">
+                                            </h6>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><h6>Isı İletkenliği (W / mK)</h6> </th>
+                                        <td>
+                                            <h6>
+                                                <input class="form-control" type="text" placeholder="W/mK" name="IsiIletkenligi">
+                                            </h6>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"> <h6>M² İçin Gerekli Tuğla Sayısı (Adet)</h6>  </th>
+                                        <td>
+                                            <h6>
+                                                <input class="form-control" type="text" placeholder="Adet" name="MetrekareTuglaSayisi">
+                                            </h6>
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="row"> <h6>Fiyat</h6>  </th>
+                                        <td>
+                                            <h6>
+                                                <input class="form-control" type="text" placeholder="TL" name="Fiyat">
+                                            </h6>
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <button class="btn btn-primary my-1" type="submit">Ürünü Ekle</button>
+
+
+
+    </div>
+    <!-- Call to action section  -->
+    <!-- Call to action section end  -->
+</form>
+

@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Anadolu.Entitiess.Admin>
+
+@{
+    ViewBag.Title = "Admin";
+    Layout = "~/Views/Shared/_LayoutAdminPage.cshtml";
+}
+
+
+<div class="row">
+    
+    <div class="col-md-6 offset-3 mt-5 mb-5">
+        <div>
+            <a href="/Admin/AdminEkle" class="btn btn-info">Yeni Kulanıcı ekle</a>
+        </div>
+        <table class="table table-bordered table-hover" id="list">
+
+            <thead>
+                <tr>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.Password)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AdminEmail)
+                    </th>
+                    <th>
+                        @Html.DisplayName("---")
+                    </th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Password)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AdminEmail)
+                        </td>
+                        <td>
+                            <a href="/Admin/AdminSil/@item.Id" class="btn btn-danger">Sil</a>
+
+                            <a href="/Admin/AdminDuzenle/@item.Id" class="btn btn-success">Düzenle</a>
+
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+
+
+
+
+        </table>
+    </div>
+</div>

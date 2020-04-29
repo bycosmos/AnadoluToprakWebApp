@@ -1,0 +1,54 @@
+﻿@model Anadolu.Entitiess.ValueObjects.LoginViewModel
+
+@{
+    ViewBag.Title = "Login";
+
+}
+
+    <section class="features-section spad set-bg">
+        <div class="container">
+           
+
+                @using (Html.BeginForm())
+                {
+                    <div class="row justify-content-center">
+
+
+                        <div class="form-header col-md-12">
+                            <h1 class="text-center col-md-12 ">Giriş Formu</h1>
+                        </div>
+
+                        <div class="col-md-4">
+                            @Html.ValidationSummary(false)
+                            @if (ViewBag.SetLink != null)
+                            {
+                                <a href="@ViewBag.SetLink" class="btn btn-primary">Activate</a>
+                            }
+                            <div class="input-group ">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                                @Html.TextBoxFor(model => model.Username, new { @class = "form-control", placeholder = "Kullanıcı adınız" })
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+                                @Html.TextBoxFor(model => model.Password, new { @class = "form-control", placeholder = "Şifreniz", type = "password" })
+                            </div>
+                            <div class="form-group ">
+                                <button type="submit" class="btn btn-danger btn-lg btn-block login-button">Giriş</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                }
+
+            </div>
+        
+    </section>
+
+
+
+
+
+
+

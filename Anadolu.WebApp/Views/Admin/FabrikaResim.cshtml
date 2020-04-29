@@ -1,0 +1,104 @@
+﻿@model IEnumerable<Anadolu.Entitiess.AnaFabrikaResim>
+@{
+    ViewBag.Title = "FabrikaResim";
+    Layout = "~/Views/Shared/_LayoutAdminPage.cshtml";
+}
+
+
+
+
+<section class="features-section spad set-bg" data-setbg="https://i.hizliresim.com/nb18JB.jpg">
+    <div class="container">
+
+       
+        <div class="row">
+            <div class="col-lg-6 p-0">
+
+
+                <div class="testimonial-box">
+
+
+
+                    <h2 class="text-white">Fabrikamız </h2>
+                    @*<p>@Resim.AltBaslik</p>*@
+                    <ul class="text-white">
+                        <li>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corpori gfhjkl yghujıkol gyhujıkol guhıjoklpş
+                        </li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporiyghujıklşilkojıhugyv kopğşüpoıuyt</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corpori</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corpori</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corpori</li>
+                    </ul>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
+
+
+
+                </div>
+
+
+
+            </div>
+            <div class="col-lg-6 p-0">
+                <div class="testimonial-box">
+                    <div class="testi-box-warp">
+                        <a href="/Admin/FabrikaResimAdd" class="btn btn-custon-four btn-primary">
+                            Yeni Resim
+
+                        </a>
+                        <div class="testimonial-slider owl-carousel">
+                            @foreach (var Resim in Model)
+                            {
+                                <div class="testimonial">
+                                    <img class="img-fluid rounded" src="@Resim.ResimAdres" alt="" style="border:inset">
+                                </div>
+
+                               
+
+
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</section>
+
+
+
+
+<section class="features-section spad set-bg" data-setbg="img/features-bg.jpg" style="background-image: url(&quot;img/features-bg.jpg&quot;);">
+    <div class="container">
+        <div class="row">
+            @foreach (var Res in Model)
+            {
+
+                <div class="col-lg-4 col-md-12">
+                    <div class="feature-box">
+                        <img src="@Res.ResimAdres" alt="" style="border:inset">
+
+
+                        <a href="/Admin/FabrikaResimDelete/@Res.Id" class="btn btn-custon-four btn-danger">Sil</a>
+
+
+                        <a href="/Admin/FabrikaResimDelete/@Res.Id" class="btn btn-custon-four btn-success">Düzenle</a>
+
+
+
+
+
+
+
+                    </div>
+                </div>
+
+            }
+        </div>
+    </div>
+</section>
+<!-- Reserch section end  -->

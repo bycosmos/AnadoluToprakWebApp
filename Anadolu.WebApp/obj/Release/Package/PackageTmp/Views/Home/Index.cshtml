@@ -1,0 +1,248 @@
+﻿@model Anadolu.WebApp.Models.HomeIndexModel
+
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<!-- Hero section  -->
+<section class="hero-section">
+    <div class="hero-slider owl-carousel">
+        @foreach (var lst in Model.anaSliderResims)
+        {
+
+
+            <div class="hero-item set-bg" data-setbg="@lst.SliderResimAdres">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-8">
+                            <h2><span>Tuğla</span><span>& Kremit</span><span>ve Daha Fazlası</span></h2>
+                            <a href="http://www.onka.com.tr/pdf/onka-katalog-2018.pdf" class="site-btn sb-white mb-3 my-2 text-center" target="_blanck"> <i class="fa fa-file-pdf-o"></i> E-Katalog( pdf )</a>
+                            <a href="#" class="site-btn sb-dark text-center" data-toggle="modal" data-target="#exampleModalCenter"> <i class="fa fa-play-circle mx-2"></i>Tanıtım Videosu</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        }
+    </div>
+</section>
+<!-- Hero section end  -->
+<!-- Services section  -->
+<section class="services-section">
+    <div class="services-warp">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <img src="https://www.mustigeziyor.com/wp-content/uploads/2019/11/135luk-tu%C4%9Fla-ka%C3%A7-kilo-gelir-678x509.png" alt="">
+                </div>
+                <div class="col-lg-7">
+                    <div class="about-text">
+                        <h2>Hakkımızda</h2>
+                        <p>
+                            1984 yılından günümüze daima yenilenmeyi ve büyümeyi kendisine ilke edinen Anadolu Toprak Sanayi, gerek üretim kalitesi gerekse üretim kapasitesi bakımından sektöründe daima ön saflarda olmayı başarmıştır.
+
+                            Prensiplerimizden ödün vermeden gerçekleştirdiğimiz hizmetlerle, firmamız; doğudan-batıya, kuzeyden-güneye on binlerce yapıya güven ve huzur ile imzasını atmayı başarmıştır.
+
+                            En önemli kazancın müşteri memnuniyeti ve sadakati olduğuna inanan Ertuğ Tuğla Fabrikası müşteri ilişkilerini güven temelinde yapılandırmıştır.
+
+                            Değişen ve gelişen iş dünyasında üretkenliği, dinamizmi, kaliteyi, özgün fikirleri, pozitif bakış açısını ön planda tutarak, müşterilerimiz ile uzun vadeli bir işbirliği içerisinde çalışmaktayız.
+
+                            Geçmişten aldığı deneyimi ile de genç ve dinamik yapısı ile gelecekte de sektörün öncüsü olarak yürümeye devam edecektir.
+
+                            Asırlardır süregelen Geleneksel Tuğla güvenirliğine katkı sağlamaktan ve bu Güveni ayakta tutmaktan gurur duyuyoruz.
+                        </p>
+                        <div class="about-sign">
+                            <div class="sign">
+                                <img src="../../img/sign.png" alt="">
+                            </div>
+                            <div class="sign-info">
+                                <h5>Fahri AYDIN</h5>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- About section end -->
+
+        </div>
+
+    </div>
+</section>
+<!-- Services section end  -->
+<!-- Features section   -->
+
+
+
+<section class="features-section spad set-bg" data-setbg="https://i.hizliresim.com/nb18JB.jpg">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-6">
+                
+                
+                    <div class="ml-2">
+                       
+
+                            
+                                <h2 class="text-white">Anadolu Toprak Sanayi </h2>
+                                @*<p>@Resim.AltBaslik</p>*@
+                                <ul class="text-white">
+                                    <li>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corpori gfhjkl yghujıkol gyhujıkol guhıjoklpş
+                                    </li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporiyghujıklşilkojıhugyv kopğşüpoıuyt</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corpori</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corpori</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corpori</li>
+                                </ul>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
+
+                           
+                       
+                    </div>
+                
+
+
+            </div>
+            <div class="col-lg-6">
+                <div >
+                    <h2 class="text-white">Fabrikamız</h2>
+                    <div class="testi-box-warp">
+
+                        <div class="testimonial-slider owl-carousel">
+                            @foreach (var Resim in Model.anaFabrikaResims)
+                            {
+                                <div class="testimonial">
+                                    <img class="img-fluid rounded" src="@Resim.ResimAdres" alt="" style="border:inset">
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+       
+
+    </div>
+</section>
+
+
+
+<!-- Features section end  -->
+<section class="cta-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-sm-2 col-sm-offset-2">
+                <h2>İş Birliği, Güç Birliği</h2>
+            </div>
+            <div class="col-lg-2"> <a href="/Home/Contact" class="site-btn sb-dark">Bize Ulaşın</a></div>
+
+        </div>
+    </div>
+</section>
+<!-- Clients section  -->
+<section class="clients-section spad">
+    <div class="container">
+        <div class="client-text">
+            <h2>Referanslarımız</h2>
+            <p>Bizi tercih ettikleri için teşekkür ederiz.</p>
+        </div>
+        <div id="client-carousel" class="client-slider owl-carousel">
+            @foreach (var Ref in Model.referanslars)
+            {
+                <div class="single-brand">
+                    <a href="@Ref.WebUrl" target="_blank">
+                        <img src="@Ref.Address" alt="">
+                    </a>
+                </div>
+
+            }
+        </div>
+
+    </div>
+</section>
+<!-- Clients section end  -->
+<section class="cta-section bg-danger">
+    <div class="container ">
+        <div class="row">
+            <div class="col-lg-9 col-sm-2 col-sm-offset-2">
+                <h2>İş Birliği, Güç Birliği</h2>
+            </div>
+            <div class="col-lg-2"> <a href="/Home/Contact" class="site-btn sb-dark">Bize Ulaşın</a></div>
+
+
+        </div>
+    </div>
+</section>
+<!-- Testimonial section -->
+<section class="testimonial-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class=" col-md-6 col-lg-6 p-0">
+                <img src="https://www.deltatoprak.com.tr/img/neden1.jpg" alt="">
+            </div>
+            <div class="col-md-6 col-lg-6 p-0" >
+                <div class="testimonial-box" data-setbg="https://i.hizliresim.com/nb18JB.jpg">
+                    <div class="testi-box-warp">
+                        <h2>Neden Tuğla</h2>
+
+                        <div class="testimonial">
+                            <ul class="text-white mx-2">
+                                <li>
+                                    TUĞLA, yapımında kullanılan ham maddenin doğası ve pişmiş olmasından dolayı yüksek mekanik dayanım özelliğine sahiptir.
+                                </li>
+                                <li>TUĞLA, yüksek sıcaklıkta pişirilerek üretildiğinden çevre şartlarından minimum oranda etkilenir ve mükemmel bir stabiliteye sahiptir.</li>
+                                <li>Kullanımı esnektir. İnşaat yapımındaki tüm tekniklere uyumludur.</li>
+                                <li>Kullanımı esnektir. İnşaat yapımındaki tüm tekniklere uyumludur.</li>
+                                <li>Yüksek mekanik dayanım kabiliyeti sayesinde yapıların yıkılma veya çökme sırasında betonarme-karkas yapı sistemine destek sağlar ve insanların binadan canlı çıkmalarına imkân tanır.</li>
+                            </ul>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- Testimonial section end  -->
+<!-- Call to action section  -->
+<section class="cta-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-sm-2 col-sm-offset-2">
+                <h2>İş Birliği, Güç Birliği</h2>
+            </div>
+            <div class="col-lg-2"> <a href="/Home/Contact" class="site-btn sb-dark">Bize Ulaşın</a></div>
+
+
+        </div>
+    </div>
+</section>
+<!-- Call to action section end  -->
+<!-- Video section  -->
+<section class="clients-section spad">
+    <div class="container">
+        <div class="client-text">
+            <h2>Belgelerimiz</h2>
+            <div class="row">
+                <div class="col-md-4"><img src="https://voltmotor.com.tr/wp-content/uploads/2017/08/iso-9001-2015-tr.jpg" alt=""></div>
+                <div class="col-md-4"><img src="https://voltmotor.com.tr/wp-content/uploads/2017/08/iso-9001-2015-tr.jpg" alt=""></div>
+                <div class="col-md-4"><img src="https://voltmotor.com.tr/wp-content/uploads/2017/08/iso-9001-2015-tr.jpg" alt=""></div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+<!-- Video section end  -->

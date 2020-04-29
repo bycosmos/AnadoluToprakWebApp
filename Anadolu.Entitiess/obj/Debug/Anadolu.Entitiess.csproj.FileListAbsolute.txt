@@ -1,0 +1,11 @@
+C:\Users\Lenovo\Source\Repos\Anadolu.WebSolution\Anadolu.Entitiess\bin\Debug\Anadolu.Entitiess.dll
+C:\Users\Lenovo\Source\Repos\Anadolu.WebSolution\Anadolu.Entitiess\bin\Debug\Anadolu.Entitiess.pdb
+C:\Users\Lenovo\Source\Repos\Anadolu.WebSolution\Anadolu.Entitiess\obj\Debug\Anadolu.Entitiess.csprojAssemblyReference.cache
+C:\Users\Lenovo\Source\Repos\Anadolu.WebSolution\Anadolu.Entitiess\obj\Debug\Anadolu.Entitiess.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Source\Repos\Anadolu.WebSolution\Anadolu.Entitiess\obj\Debug\Anadolu.Entitiess.dll
+C:\Users\Lenovo\Source\Repos\Anadolu.WebSolution\Anadolu.Entitiess\obj\Debug\Anadolu.Entitiess.pdb
+C:\Users\Lenovo\Source\Repos\AnadoluMvcWebApp\Anadolu.Entitiess\bin\Debug\Anadolu.Entitiess.dll
+C:\Users\Lenovo\Source\Repos\AnadoluMvcWebApp\Anadolu.Entitiess\bin\Debug\Anadolu.Entitiess.pdb
+C:\Users\Lenovo\Source\Repos\AnadoluMvcWebApp\Anadolu.Entitiess\obj\Debug\Anadolu.Entitiess.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Source\Repos\AnadoluMvcWebApp\Anadolu.Entitiess\obj\Debug\Anadolu.Entitiess.dll
+C:\Users\Lenovo\Source\Repos\AnadoluMvcWebApp\Anadolu.Entitiess\obj\Debug\Anadolu.Entitiess.pdb

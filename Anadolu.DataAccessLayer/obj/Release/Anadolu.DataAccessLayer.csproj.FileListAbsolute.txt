@@ -1,0 +1,16 @@
+C:\Users\Lenovo\Source\Repos\AnadoluMvcWebApp\Anadolu.DataAccessLayer\bin\Release\Anadolu.DataAccessLayer.dll.config
+C:\Users\Lenovo\Source\Repos\AnadoluMvcWebApp\Anadolu.DataAccessLayer\bin\Release\Anadolu.DataAccessLayer.dll
+C:\Users\Lenovo\Source\Repos\AnadoluMvcWebApp\Anadolu.DataAccessLayer\bin\Release\Anadolu.DataAccessLayer.pdb
+C:\Users\Lenovo\Source\Repos\AnadoluMvcWebApp\Anadolu.DataAccessLayer\bin\Release\Anadolu.Core.dll
+C:\Users\Lenovo\Source\Repos\AnadoluMvcWebApp\Anadolu.DataAccessLayer\bin\Release\Anadolu.Entitiess.dll
+C:\Users\Lenovo\Source\Repos\AnadoluMvcWebApp\Anadolu.DataAccessLayer\bin\Release\EntityFramework.dll
+C:\Users\Lenovo\Source\Repos\AnadoluMvcWebApp\Anadolu.DataAccessLayer\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Lenovo\Source\Repos\AnadoluMvcWebApp\Anadolu.DataAccessLayer\bin\Release\Anadolu.Core.pdb
+C:\Users\Lenovo\Source\Repos\AnadoluMvcWebApp\Anadolu.DataAccessLayer\bin\Release\Anadolu.Entitiess.pdb
+C:\Users\Lenovo\Source\Repos\AnadoluMvcWebApp\Anadolu.DataAccessLayer\bin\Release\EntityFramework.xml
+C:\Users\Lenovo\Source\Repos\AnadoluMvcWebApp\Anadolu.DataAccessLayer\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Lenovo\Source\Repos\AnadoluMvcWebApp\Anadolu.DataAccessLayer\obj\Release\Anadolu.DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\Lenovo\Source\Repos\AnadoluMvcWebApp\Anadolu.DataAccessLayer\obj\Release\Anadolu.DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Source\Repos\AnadoluMvcWebApp\Anadolu.DataAccessLayer\obj\Release\Anadolu.DataAccessLayer.csproj.CopyComplete
+C:\Users\Lenovo\Source\Repos\AnadoluMvcWebApp\Anadolu.DataAccessLayer\obj\Release\Anadolu.DataAccessLayer.dll
+C:\Users\Lenovo\Source\Repos\AnadoluMvcWebApp\Anadolu.DataAccessLayer\obj\Release\Anadolu.DataAccessLayer.pdb

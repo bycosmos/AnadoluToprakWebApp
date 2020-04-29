@@ -1,0 +1,321 @@
+﻿<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <title>Anadolu Toprak Sanayi A.Ş</title>
+
+
+    <meta charset="UTF-8">
+    <meta name="description" content="Industry.INC HTML Template">
+    <meta name="keywords" content="industry, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link href="~/img/favicon.ico" rel="shortcut icon" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i&display=swap" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/css/magnific-popup.css" />
+    <link rel="stylesheet" href="~/css/slicknav.min.css" />
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/css/wapopup.css" rel="stylesheet" />
+    <!-- Main Stylesheets -->
+    <link href="~/css/table.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/style.css" />
+    <script src="~/js/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/js/bundle-js.js"></script>
+
+
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        #ProductCard {
+           
+            border: 1px solid #808080;
+           
+        }
+        
+    </style>
+</head>
+
+<div class="wa__btn_popup">
+    <div class="wa__btn_popup_txt wa__btn_popup_txt2">Sorularınız için...</div>
+    <div class="wa__btn_popup_icon"></div>
+</div>
+<div class="wa__popup_chat_box">
+    <div class="wa__popup_heading">
+        <div class="wa__popup_title">Konuşmayı başlat</div>
+        <div class="wa__popup_intro"></a></div>
+    </div>
+    <!-- /.wa__popup_heading -->
+    <div class="wa__popup_content wa__popup_content_left">
+        <div class="wa__popup_notice"></div>
+        <div class="wa__popup_content_list">
+
+            <div class="wa__popup_content_item">
+                <a target="_blank" href="https://api.whatsapp.com/send?phone=905318120698&text=Merhaba" class="wa__stt wa__stt_online">
+                    <div class="wa__popup_avatar">
+                        <div class="wa__cs_img_wrap" style="background: url(img/cgtytpl.jpg) center center no-repeat; background-size: cover;"></div>
+                    </div>
+
+                    <div class="wa__popup_txt">
+                        <div class="wa__member_name">Muhammet Başara</div>
+                        <!-- /.wa__member_name -->
+                        <div class="wa__member_duty">Software Developer</div>
+                        <!-- /.wa__member_duty -->
+                    </div>
+                    <!-- /.wa__popup_txt -->
+                </a>
+            </div>
+
+        </div>
+        <!-- /.wa__popup_content_list -->
+    </div>
+    <!-- /.wa__popup_content -->
+</div>
+
+<body>
+
+
+    <!-- Header section  -->
+    <header class="header-section clearfix ">
+
+        <!-- navbar başlangıç -->
+        <div class="site-navbar bg-light">
+            <!-- Logo -->
+            <a href="~/Home/Index" class="site-logo">
+                <img src="~/Logo/logo6.png" alt="">
+            </a>
+            <div class="header-right">
+                <div class="header-info-box">
+                    <div class="hib-icon">
+                        <img src="~/img/icons/phone.png" alt="" class="">
+                    </div>
+                    <div class="hib-text">
+                        <h6>+90546 212 32 60</h6>
+                        <p>iletisim@anadolutoprak.com</p>
+                    </div>
+                </div>
+                <div class="header-info-box">
+                    <div class="hib-icon">
+                        <img src="~/img/icons/map-marker.png" alt="" class="">
+                    </div>
+                    <div class="hib-text">
+                        <h6>Y.Beyazıt Mah.R.T Erdoğan Blv. 78</h6>
+                        <p>Erbaa, Tokat</p>
+                    </div>
+                </div>
+                <button class="search-switch"><i class="fa fa-search"></i></button>
+            </div>
+            <!-- Menu -->
+            <nav class="site-nav-menu">
+                <ul>
+                    <li><a href="~/Home/Index">Anasayfa</a></li>
+                    <li>
+                        <a href="~/Home/Urunler">Ürünler</a>
+
+                    </li>
+                    <li><a href="~/Home/Galeri">Galeri</a></li>
+                    <li><a href="~/Home/Iletisim">İletişim</a></li>
+
+                    <li><a href="~/Home/Bayiler">Bayiler</a></li>
+                    @using Anadolu.Entitiess.ValueObjects
+                    @using Anadolu.WebApp.Models
+                    @if (CurrentSession.User != null)
+                    {
+
+                        <li><a href="~/Admin/Index">Y-P</a></li>
+                    }
+                </ul>
+            </nav>
+        </div>
+        <!-- navbar başlangıç -->
+    </header>
+
+
+    @RenderBody()
+
+    <!-- Header section end  -->
+    <!-- Footer section -->
+    <footer class="footer-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget about-widget">
+                        <img src="../../Logo/logo7.png" />
+                        <div class="footer-social">
+                            <a href=""><i class="fa fa-facebook"></i></a>
+                            <a href=""><i class="fa fa-twitter"></i></a>
+                            <a href=""><i class="fa fa-google"></i></a>
+                            <a href=""><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="footer-widget">
+                        <h2 class="fw-title">Çalışma Saatleri</h2>
+                        <table class="table table-borderless">
+
+                            <thead>
+                                <tr>
+
+                                    <th scope="col">Pazartesi-Cuma</th>
+                                    <th scope="col">Cumartesi</th>
+                                    <th scope="col">Pazar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+
+
+                                    <td>08:00-12:00</td>
+
+                                    <td>08:00-12:00</td>
+
+                                    <td>Kapalı</td>
+                                </tr>
+                                <tr>
+
+                                    <td>13:00-18:00</td>
+
+                                    <td>13:00-18:00</td>
+
+                                    <td>Kapalı</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-3 col-md-6 col-sm-7">
+                    <div class="footer-widget">
+                        <h2 class="fw-title">İletişim</h2>
+                        <div class="footer-info-box">
+                            <div class="fib-icon">
+                                <img src="../../img/icons/map-marker.png" alt="" class="">
+                            </div>
+                            <div class="fib-text">
+                                <p>
+                                    Y.Beyazıt Mah.R.T Erdoğan Blv. No:78
+                                    Erbaa, Tokat
+                                </p>
+                            </div>
+                        </div>
+                        <div class="footer-info-box">
+                            <div class="fib-icon">
+                                <img src="../../img/icons/phone.png" alt="" class="">
+                            </div>
+                            <div class="fib-text">
+                                <p>+90546 212 32 60</p>
+                                <p>iletisim@anadolutoprak.com</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-buttom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 order-2 order-lg-1 p-0">
+                        <div class="copyright">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script> Design : Muhammet Başara
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </div>
+                    </div>
+                    <div class="col-lg-7 order-1 order-lg-2 p-0">
+                        <ul class="footer-menu">
+                            <li><a href="~/Home/Index">Anasayfa</a></li>
+
+                            <li>
+                                <a href="~/Home/Urunler">Ürünler</a>
+
+                            </li>
+                            <li><a href="~/Home/Galeri">Galeri</a></li>
+                            <li><a href="~/Home/Iletisim">İletişim</a></li>
+                            <li><a href="~/Home/Bayiler">Bayiler</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer section end -->
+    <!-- Search model -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search model end -->
+    <!-- #modal start -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body bg-dark">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/RFO7kzBWDYE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <!--====== Javascripts & Jquery ======-->
+        <script src="~/js/jquery-3.2.1.min.js"></script>
+        <script src="~/js/bootstrap.min.js"></script>
+        <script src="~/js/jquery.slicknav.min.js"></script>
+        <script src="~/js/owl.carousel.min.js"></script>
+        <script src="~/js/circle-progress.min.js"></script>
+        <script src="~/js/jquery.magnific-popup.min.js"></script>
+        <script src="~/js/main.js"></script>
+
+
+
+        <script>
+            (function ($) {
+                var wa_time_out, wa_time_in;
+                $(document).ready(function () {
+                    $(".wa__btn_popup").on("click", function () {
+                        if ($(".wa__popup_chat_box").hasClass("wa__active")) {
+                            $(".wa__popup_chat_box").removeClass("wa__active");
+                            $(".wa__btn_popup").removeClass("wa__active");
+                            clearTimeout(wa_time_in);
+                            if ($(".wa__popup_chat_box").hasClass("wa__lauch")) {
+                                wa_time_out = setTimeout(function () {
+                                    $(".wa__popup_chat_box").removeClass("wa__pending");
+                                    $(".wa__popup_chat_box").removeClass("wa__lauch");
+                                }, 400);
+                            }
+                        } else {
+                            $(".wa__popup_chat_box").addClass("wa__pending");
+                            $(".wa__popup_chat_box").addClass("wa__active");
+                            $(".wa__btn_popup").addClass("wa__active");
+                            clearTimeout(wa_time_out);
+                            if (!$(".wa__popup_chat_box").hasClass("wa__lauch")) {
+                                wa_time_in = setTimeout(function () {
+                                    $(".wa__popup_chat_box").addClass("wa__lauch");
+                                }, 100);
+                            }
+                        }
+                    });
+                });
+            })(jQuery);
+        </script>
+</body>
+</html>

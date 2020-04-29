@@ -1,0 +1,331 @@
+﻿@model Anadolu.Entitiess.Product
+
+<div class="row">
+
+    <div class="col-md-4 d-none d-sm-block">
+
+
+
+        <div class=" card" style=" min-height:750px">
+
+
+            <div class="card-title text-center mb-2 mt-2"> <h3>Ürün Bilgileri</h3></div>
+
+
+            <div style="display:none">
+
+                <input name="name" value="@Model.Fiyat" disabled id="Fiyat1" />
+
+            </div>
+
+
+            <script>
+
+    $("#Adet").change(function () {
+
+        var sayi1 = Number($("#Adet").val());
+        var sayi2 = parseFloat(@Model.Fiyat);
+        $("#ToplamOrtalamaFiyat").val(sayi1 * sayi2 + " TL");
+
+
+
+    });
+            </script>
+
+
+
+
+
+            <div class="row">
+
+                <div class=" col-md-4 offset-4">
+                    <img src="@Model.UrunResimAdres" alt="">
+
+                </div>
+                <div class="col-md-12">
+                    <small class="text-center">
+                        <h4 class="card-title mt-2 mb-2"> @Model.Name </h4>
+
+                    </small>
+                    <table class="table table-striped">
+
+                        <tbody>
+                            <tr>
+                                <th><small>Ağırlık(kg)</small> </th>
+                                <td><small>@Model.Agirlik</small></td>
+
+                            </tr>
+                            <tr>
+                                <th scope="row"><small>Boyut(cm)</small> </th>
+                                <td><small>@Model.Boyut</small> </td>
+
+                            </tr>
+                            <tr>
+                                <th scope="row"><small>Basınç Dayanımı(N/mm)</small> </th>
+                                <td><small>@Model.BasincDayanimi</small> </td>
+
+                            </tr>
+                            <tr>
+                                <th scope="row"><small>Isı iletkenliği()</small> </th>
+                                <td><small>@Model.IsiIletkenligi</small> </td>
+
+                            </tr>
+
+                            <tr>
+                                <th scope="row"><small>M² İçin Gereken Tuğla Sayısı (Adet)	</small> </th>
+                                <td><small>@Model.MetrekareTuglaSayisi</small> </td>
+
+                            </tr>
+
+
+                            <tr>
+                                <th scope="row"><small>Fiyat	</small> </th>
+                                <td><small>@Model.Fiyat</small> </td>
+
+
+                            </tr>
+
+                            <tr>
+                                <th scope="row"><small>dfghgfds	</small> </th>
+                                <td><small>1</small> </td>
+
+                            </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+
+                @*<div class="col-md-6 offset-2 mt-2 mb-2">
+                        <h6>Diğer Bilgiler</h6>
+
+                    </div>
+                    <div class="col-md-12 mx-mr-3 mb-3">
+                        <div class="mx-4">
+
+
+
+                            <p>Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir.</p>
+                            <p>Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat </p>
+                            <p>Yaygın inancın tersine, Lorem Ipsum rastgele sözcüklerden oluşmaz</p>
+                            <p>Kökleri M.Ö. 45 tarihinden bu yana klasik Latin edebiyatına kadar</p>
+                            <p>College'dan Latince profesörü Richard McClintock</p>
+
+
+                        </div>
+                    </div>*@
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <div class="col-md-8 d-none d-sm-block">
+
+
+        <div class=" card" style=" min-height:750px">
+
+            <div class="card-title text-center mb-1 mt-1"> <h3>Siparis Bilgileri (@Model.Name)</h3></div>
+
+            @using (Html.BeginForm("Siparis", "Home", FormMethod.Post, new { @class = "contact-form" }))
+            {
+
+
+                @*<form class="contact-form">*@
+                <div class="row my-4 mx-4">
+
+                    <div class="col-lg-12 text-center">
+                        <input type="text" placeholder="@Model.Name İçin Siparis Formu" value="@Model.Name" name="UrunAdi" readonly style="display:none">
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="text" placeholder="Ad Soyad" name="MusteriAdiSoyAdi" required oninvalid="this.setCustomValidity('Adınızı Ve Soyadınızı Giriniz.')" oninput="this.setCustomValidity('')">
+                    </div>
+
+                    <div class="col-lg-6">
+                        <input type="email" placeholder="Email" name="Email" required>
+                    </div>
+                    <div class="col-lg-2">
+
+                        <h6 class="mt-3 mx-4">Adet :</h6>
+                    </div>
+                    <div class="col-lg-2">
+                        <input type="number" value="500" min="0" max="100000" step="10" id="Adet" name="Adet" />
+                    </div>
+                    <div class="col-lg-2 ">
+
+                        <h6 class="mt-3 mx-4">Fiyat :</h6>
+                    </div>
+                    <div class="col-lg-2">
+                        <input type="number" value="@Model.Fiyat" step="10" id="Fiyat" readonly name="Fiyat" />
+                    </div>
+                    <div class="col-lg-2 ">
+
+                        <h6 class="mt-3 mx-4">Tutar :</h6>
+                    </div>
+                    <div class="col-lg-2">
+                        <input type="text" min="0" max="100000" step="10" id="ToplamOrtalamaFiyat" name="ToplamOrtalamaTutar" />
+                    </div>
+
+
+                    <div class="col-lg-6">
+                        <input type="text" min="0" max="100000" step="10" id="Telefon" placeholder="Telefon" name="Telefon" required />
+                    </div>
+
+                    <div class="col-lg-3">
+                        <input type="text" min="0" max="100000" step="10" id="Il" placeholder="İl" name="Il" required />
+                    </div>
+
+
+
+                    <div class="col-lg-3">
+                        <input type="text" min="0" max="100000" step="10" id="Ilce" placeholder="İlçe" name="Ilce" required />
+                    </div>
+
+
+                    <div class="col-lg-12">
+
+                        <textarea class="text-msg" placeholder="Adres" name="Adres" style="max-height:120px" required></textarea>
+
+                        <textarea class="text-msg" placeholder="Ek Açıklama" name="EkBilgi" style="max-height:120px"></textarea>
+
+
+
+                        <button class="site-btn" type="submit">Siparişi Tamamla</button>
+                    </div>
+                </div>
+                @*</form>*@
+            }
+
+        </div>
+
+
+
+
+    </div>
+
+
+    <div class="row-block d-sm-none">
+
+
+        <div>
+
+            <div class="text-center mb-1 mt-1"> <h3>Siparis Bilgileri (@Model.Name)</h3></div>
+
+            @using (Html.BeginForm("Siparis", "Home", FormMethod.Post, new { @class = "contact-form" }))
+            {
+
+
+                @*<form class="contact-form">*@
+            <div class="row ">
+
+                <div class="col-sm-12 text-center">
+                    <input type="text" placeholder="@Model.Name İçin Siparis Formu" value="@Model.Name" name="UrunAdi" readonly style="display:none">
+                </div>
+                <div class="col-sm-12">
+                    <input type="text" placeholder="Ad Soyad" name="MusteriAdiSoyAdi" required oninvalid="this.setCustomValidity('Adınızı Ve Soyadınızı Giriniz.')" oninput="this.setCustomValidity('')">
+                </div>
+
+                <div class="col-sm-12">
+                    <input type="email" placeholder="Email" name="Email" required>
+                </div>
+
+                <div class="col-sm-1">
+                    <h6> Adet :</h6>
+                   
+
+                </div>
+                <div class="col-sm-3">
+                   
+                    <input type="number" value="500" min="0" max="100000" step="10" id="Adet1" name="Adet" />
+
+                </div>
+
+
+
+
+
+                <div class="col-sm-12">
+                    <h6>Fiyat :</h6>
+
+                    <input type="number" value="@Model.Fiyat" step="10" id="Fiyat" readonly name="Fiyat" />
+                </div>
+
+
+                <div class="col-sm-12">
+                    <h6>Tutar :</h6>
+                    <input type="text" min="0" max="100000" step="10" id="ToplamOrtalamaFiyat1" name="ToplamOrtalamaTutar" />
+                </div>
+
+
+                <div class="col-sm-12">
+                    <input type="text" min="0" max="100000" step="10" id="Telefon" placeholder="Telefon" name="Telefon" required />
+                </div>
+
+
+                <div class="col-sm-12">
+                    <input type="text" min="0" max="100000" step="10" id="Il" placeholder="İl" name="Il" required />
+                </div>
+
+
+
+                <div class="col-sm-12">
+                    <input type="text" min="0" max="100000" step="10" id="Ilce" placeholder="İlçe" name="Ilce" required />
+                </div>
+
+
+                <div class="col-sm-12">
+
+                    <textarea class="text-msg" placeholder="Adres" name="Adres" style="max-height:120px" required></textarea>
+
+                    <textarea class="text-msg" placeholder="Ek Açıklama" name="EkBilgi" style="max-height:120px"></textarea>
+
+
+
+                    <button class="site-btn" type="submit">Siparişi Tamamla</button>
+                </div>
+            </div>
+                @*</form>*@
+            }
+
+        </div>
+
+
+
+        <script>
+
+    $("#Adet1").change(function () {
+
+        var sayi1 = Number($("#Adet1").val());
+        var sayi2 = parseFloat(@Model.Fiyat);
+        $("#ToplamOrtalamaFiyat1").val(sayi1 * sayi2 + " TL");
+
+
+
+    });
+        </script>
+
+
+
+
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+

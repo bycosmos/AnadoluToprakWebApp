@@ -1,0 +1,6 @@
+C:\Users\Lenovo\Source\Repos\AnadoluMvcWebApp\Anadolu.Core\bin\Release\Anadolu.Core.dll
+C:\Users\Lenovo\Source\Repos\AnadoluMvcWebApp\Anadolu.Core\bin\Release\Anadolu.Core.pdb
+C:\Users\Lenovo\Source\Repos\AnadoluMvcWebApp\Anadolu.Core\obj\Release\Anadolu.Core.csprojAssemblyReference.cache
+C:\Users\Lenovo\Source\Repos\AnadoluMvcWebApp\Anadolu.Core\obj\Release\Anadolu.Core.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Source\Repos\AnadoluMvcWebApp\Anadolu.Core\obj\Release\Anadolu.Core.dll
+C:\Users\Lenovo\Source\Repos\AnadoluMvcWebApp\Anadolu.Core\obj\Release\Anadolu.Core.pdb

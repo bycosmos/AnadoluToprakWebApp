@@ -1,0 +1,91 @@
+﻿@model IEnumerable<Anadolu.Entitiess.Iller>
+
+@{
+                /**/
+
+                ViewBag.Title = "Bayiler";
+                Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="container" style="min-height:600px">
+
+    <div class="form-header col-md-12">
+        <br />
+        <h4 class="text-center col-md-12 ">Bayilerimiz</h4>
+        <hr />
+    </div>
+
+    <div class="row">
+
+
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+
+
+
+            <div class="form-group">
+                <select class="form-control" id="sel1">
+                    @foreach (var i in Model)
+                    {
+
+
+                        <option value="@i.Id">@i.Name</option>
+                    }
+                </select>
+
+            </div>
+
+
+        </div>
+
+        <div class="alert alert-success col-md-12" id="loading" style="display:none"> Yükleniyor...</div>
+
+        <table class="ui table table-bordered table-hover" id="list"></table>
+
+
+
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+
+
+
+        var id = $('#sel1 option:selected').val();
+        $.get("/Home/_Bayiler/", { id: id }, function (d) {
+            $("#list").show();
+            $("#list").html(d);
+
+
+
+
+        });
+
+
+
+        $('#sel1').change(function () {
+            $("#list").hide();
+
+            $("#loading").show(700, function () {
+                var id = $('#sel1 option:selected').val();
+                $.get("/Home/_Bayiler/", { id: id }, function (d) {
+                    $("#list").show();
+                    $("#list").html(d);
+
+                    $("#loading").hide(700);
+
+
+                });
+            });
+
+        });
+
+
+    });
+</script>
+
+
+

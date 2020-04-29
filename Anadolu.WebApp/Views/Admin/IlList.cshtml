@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Anadolu.Entitiess.Iller>
+
+@{
+                /**/
+
+                ViewBag.Title = "IlList";
+                Layout = "~/Views/Shared/_LayoutAdminPage.cshtml";
+}
+
+
+
+
+
+
+
+<section>
+
+
+    <form action="/Admin/IlAdd" method="post" enctype="multipart/form-data">
+
+
+
+
+
+        <h2 class="text-center">Il Ekle</h2>
+
+
+        <input class="form-control" type="text" placeholder="İl Yaz (Adana)" name="Name">
+        <button type="submit" class="btn btn-success btn-block"> Ekle</button>
+    </form>
+
+</section>
+
+
+<section class="features-section spad set-bg" data-setbg="ig/features-bg.jpg" style="background-image: url(&quot;im/features-bg.jpg&quot;);">
+    <div class="container">
+        <div class="row">
+            @foreach (var i in Model)
+            {
+
+
+                <div class="col-lg-2 col-md-6" style="border:inset">
+
+
+                    <div class="fb-text">
+                        <h5>@i.Name</h5>
+
+                        <a href="/Admin/IlDelete/@i.Id" class="btn btn-danger">Sil</a>
+
+
+
+
+
+                        <a href="/Admin/IlEdit/@i.Id" class="btn btn-success">Düzenle</a>
+
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+

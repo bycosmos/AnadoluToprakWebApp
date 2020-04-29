@@ -1,0 +1,185 @@
+﻿@model IEnumerable<Anadolu.Entitiess.Product>
+
+
+
+
+@{
+    ViewBag.Title = "Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row my-4 mx-4">
+
+    <br>
+    <div class="col-md-12 col-sm-12">
+        <button class="btn btn-small btn-outline-dark" data-toggle="portfilter" data-target="all" id="ProductCard">
+            Tüm Ürünler
+        </button>
+        <button class="btn btn-small btn-outline-dark" data-toggle="portfilter" data-target="Tugla" id="ProductCard">
+            Tuğla
+        </button>
+        <button class="btn btn-small btn-outline-dark" data-toggle="portfilter" data-target="Kiremit" id="ProductCard">
+            Kiremit
+        </button>
+        <button class="btn btn-small btn-outline-dark" data-toggle="portfilter" data-target="OzelUrun" id="ProductCard">
+            Özel Ürünler
+        </button>
+    </div>
+
+
+    @foreach (var pro in Model)
+    {
+
+        <div class="col-md-6 my-3" data-tag="@pro.Category.Name">
+            <div class=" card  d-sm-block d-none">
+                <div class="row">
+                    <div class="col-md-8 offset-2 text-center">
+                        <h4 class="card-title my-1 mx-1 mt-1 mb-1">@pro.Name Teknik Bilgileri </h4>
+                        <hr />
+
+                    </div>
+
+                    <div class="col-md-4 text-center">
+                        <img src="@pro.UrunResimAdres" alt="" style="height:150px; height:150px;">
+
+
+                        <div class="text-center mt-5">
+
+
+                            <a href="/Home/Siparis/@pro.Id" class="btn btn-default">
+                                <img src="../../img/icons/cart.png" alt="Alternate Text" />
+                                <h6>Sipariş Ver</h6>
+                            </a>
+
+                        </div>
+
+                    </div>
+                    <div class="col-md-8">
+
+                        <table class="table table-striped">
+
+                            <tbody>
+                                <tr>
+                                    <th><h6>Ağırlık(kg)</h6> </th>
+                                    <td><h6>@pro.Agirlik</h6></td>
+
+                                </tr>
+                                <tr>
+                                    <th scope="row"><h6>Boyut(cm)</h6> </th>
+                                    <td><h6>@pro.Boyut</h6> </td>
+
+                                </tr>
+                                <tr>
+                                    <th scope="row"><h6>Basınç Dayanımı(N/mm)</h6> </th>
+                                    <td><h6>@pro.BasincDayanimi</h6> </td>
+
+                                </tr>
+                                <tr>
+                                    <th scope="row"><h6>Isı iletkenliği()</h6> </th>
+                                    <td><h6>@pro.IsiIletkenligi</h6> </td>
+
+                                </tr>
+                                <tr>
+                                    <th scope="row"><h6>M² İçin Gereken Tuğla Sayısı (Adet)	</h6> </th>
+                                    <td><h6>@pro.MetrekareTuglaSayisi</h6> </td>
+
+                                </tr>
+                                <tr>
+                                    <th scope="row"><h6> 1 paletteki Tuğla Sayısı (Adet)</h6> </th>
+                                    <td><h6>500</h6> </td>
+
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-6 d-block d-sm-none" data-tag="@pro.Category.Name">
+            <div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h4 class="card-title">@pro.Name </h4>
+
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <img src="@pro.UrunResimAdres" alt="" style="height:100px;width:100px;">
+
+                    </div>
+                    <div class="col-md-4">
+
+
+                        <div class="text-center mt-5">
+
+
+                            <a href="/Home/Siparis/@pro.Id" class="btn btn-default">
+                                <img src="../../img/icons/cart.png" alt="Alternate Text" />
+                                <h6>Sipariş Ver</h6>
+                            </a>
+
+                        </div>
+
+                    </div>
+                    <div class="col-md-8">
+
+                        <table class="table table-striped">
+
+                            <tbody>
+                                <tr>
+                                    <th><h6>Ağırlık(kg)</h6> </th>
+                                    <td><h6>@pro.Agirlik</h6></td>
+
+                                </tr>
+                                <tr>
+                                    <th scope="row"><h6>Boyut(cm)</h6> </th>
+                                    <td><h6>@pro.Boyut</h6> </td>
+
+                                </tr>
+                                <tr>
+                                    <th scope="row"><h6>Basınç Dayanımı(N/mm)</h6> </th>
+                                    <td><h6>@pro.BasincDayanimi</h6> </td>
+
+                                </tr>
+                                <tr>
+                                    <th scope="row"><h6>Isı iletkenliği()</h6> </th>
+                                    <td><h6>@pro.IsiIletkenligi</h6> </td>
+
+                                </tr>
+                                <tr>
+                                    <th scope="row"><h6>M² İçin Gereken Tuğla Sayısı (Adet)	</h6> </th>
+                                    <td><h6>@pro.MetrekareTuglaSayisi</h6> </td>
+
+                                </tr>
+                                <tr>
+                                    <th scope="row"><h6> 1 paletteki Tuğla Sayısı (Adet)</h6> </th>
+                                    <td><h6>500</h6> </td>
+
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    }
+
+</div>
+
+<script>
+    // Lightbox init
+    !function (d) { var c = "portfilter"; var b = function (e) { this.$element = d(e); this.stuff = d("[data-tag]"); this.target = this.$element.data("target") || "" }; b.prototype.filter = function (g) { var e = [], f = this.target; this.stuff.fadeOut("fast").promise().done(function () { d(this).each(function () { if (d(this).data("tag") == f || f == "all") { e.push(this) } }); d(e).show() }) }; var a = d.fn[c]; d.fn[c] = function (e) { return this.each(function () { var g = d(this), f = g.data(c); if (!f) { g.data(c, (f = new b(this))) } if (e == "filter") { f.filter() } }) }; d.fn[c].defaults = {}; d.fn[c].Constructor = b; d.fn[c].noConflict = function () { d.fn[c] = a; return this }; d(document).on("click.portfilter.data-api", "[data-toggle^=portfilter]", function (f) { d(this).portfilter("filter") }) }(window.jQuery);
+</script>
+
+

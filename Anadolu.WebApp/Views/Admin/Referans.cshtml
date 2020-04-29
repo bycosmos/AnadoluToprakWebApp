@@ -1,0 +1,110 @@
+﻿@model IEnumerable<Anadolu.Entitiess.Referanslar>
+
+@{
+    ViewBag.Title = "Referans";
+    Layout = "~/Views/Shared/_LayoutAdminPage.cshtml";
+}
+
+
+
+
+
+<!-- Clients section  -->
+<section class="clients-section spad">
+    <div class="container">
+        <div class="client-text">
+            <h2>Referanslarımız</h2>
+            <p>Bizi tercih ettikleri için teşekkür ederiz.</p>
+        </div>
+        <div id="client-carousel" class="client-slider owl-carousel">
+            @foreach (var Ref in Model)
+            {
+                <div class="single-brand">
+                    <a href="@Ref.WebUrl" target="_blank">
+                        <img src="@Ref.Address" alt="">
+                    </a>
+                </div>
+
+            }
+        </div>
+
+    </div>
+</section>
+<!-- Clients section end  -->
+
+
+<section>
+
+
+    <form action="/Admin/ReferansEkle" method="post" enctype="multipart/form-data">
+
+
+
+
+
+        <h2 class="text-center">Referans Ekle</h2>
+
+        <div class="form-control" enctype="multipart/form-data">
+            <input type="file" name="uploadfile" id="uploadfile" />
+            <br />
+
+        </div>
+
+
+        <table class="table table-striped">
+
+            <tbody>
+                <tr>
+                    <th><h6 class="form-control">Referans Şirketin Web Adresi</h6> </th>
+                    <td>
+                        <h6>
+                            <input class="form-control" type="text" placeholder="Boş Geçilebilir ! (www.abc.com)" name="WebUrl">
+                        </h6>
+                    </td>
+
+                </tr>
+
+            </tbody>
+        </table>
+        <button type="submit" class="btn btn-success btn-block"> Ekle</button>
+    </form>
+
+</section>
+
+
+
+
+
+
+<section class="features-section spad set-bg" data-setbg="img/features-bg.jpg" style="background-image: url(&quot;img/features-bg.jpg&quot;);">
+    <div class="container">
+        <div class="row">
+            @foreach (var Res in Model)
+            {
+
+                <div class="col-lg-4 col-md-12">
+                    <div class="feature-box">
+                        <img src="@Res.Address" alt="" style="border:inset">
+
+
+                        <a href="/Admin/ReferansSil/@Res.Id" class="btn btn-custon-four btn-danger">Sil</a>
+
+
+                        <a href="/Admin/ReferansEdit/@Res.Id" class="btn btn-custon-four btn-success">Düzenle</a>
+
+
+
+
+
+
+
+                    </div>
+                </div>
+
+            }
+        </div>
+    </div>
+</section>
+<!-- Reserch section end  -->
+<!-- Hero section end  -->
+<!-- Hero section end  -->
